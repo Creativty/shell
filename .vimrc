@@ -20,6 +20,16 @@ function NorminetteCurrent()
 	cwindow
 endfunction
 
+function HeaderSetup()
+	let l:filename = expand("%:t")
+	Stdheader
+	call append(11, "#endif")
+	call append(11, "#define _H")
+	call append(11, "#ifndef _H")
+	call append(11, "")
+endfunction
+
+nnoremap <F5> :call HeaderSetup()<CR>
 nnoremap <F2> :call NorminetteCurrent()<CR>
 nnoremap <F3> :call FormatCurrent()<CR>
 nnoremap <F4> :call Norminette()<CR>
