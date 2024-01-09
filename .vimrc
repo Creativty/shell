@@ -4,6 +4,8 @@ set omnifunc=syntaxcomplete#Complete
 set shiftwidth=4 tabstop=4 smartindent noexpandtab
 set foldmethod=syntax
 
+set runtimepath+=$HOME/.vim/odin.vim
+
 hi Folded ctermbg=4 ctermfg=7
 
 function NorminetteAll()
@@ -28,6 +30,12 @@ function HeaderSetup()
 	call append(11, "#ifndef _H")
 	call append(11, "")
 endfunction
+
+augroup odin
+	autocmd!
+	autocmd BufRead *.odin set filetype=odin
+	autocmd BufNewFile *.odin set filetype=odin
+augroup END
 
 nnoremap <F5> :call HeaderSetup()<CR>
 nnoremap <F2> :call NorminetteCurrent()<CR>
