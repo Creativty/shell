@@ -1,3 +1,4 @@
+set showcmd
 set nowrap hlsearch
 set	number relativenumber
 set omnifunc=syntaxcomplete#Complete
