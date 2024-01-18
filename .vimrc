@@ -1,13 +1,15 @@
-set showcmd
+set mouse=r
 set nowrap hlsearch
-set	number relativenumber
-set omnifunc=syntaxcomplete#Complete
-set shiftwidth=4 tabstop=4 smartindent noexpandtab
-set foldmethod=syntax
+set showcmd cursorline
+set number relativenumber
+set tabstop=4 shiftwidth=4 smartindent noexpandtab autoindent
+set foldmethod=syntax omnifunc=syntaxcomplete#Complete
 
+syntax on
 set runtimepath+=$HOME/.vim/odin.vim
 
 hi Folded ctermbg=4 ctermfg=7
+hi CursorColumn ctermbg=darkgrey cterm=bold
 
 function NorminetteAll()
 	execute "!" "norminette"
